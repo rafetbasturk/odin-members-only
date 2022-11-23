@@ -1,0 +1,11 @@
+<%- include("../partials/top") %>
+
+<main class="form-page">
+  <form method="post">
+    <p>Do you really want to delete this post?</p>
+    <input type="hidden" name="postId" value="<%= post.id %>">
+    <button>Delete</button>
+  </form>
+</main>
+
+<%- include("../partials/bottom") %>

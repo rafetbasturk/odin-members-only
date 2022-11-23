@@ -1,0 +1,34 @@
+<%- include("../partials/top") %>
+
+<main class="users-page">
+  <table>
+    <caption>Users</caption>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th colspan="2">Full Name</th>
+        <th>Status</th>
+        <th>Admin</th>
+        <th>Member Since</th>
+      </tr>
+    </thead>
+    <% if (users.length) { %>
+      <tbody>
+        <% users.forEach((user, i) => { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= user.fname %></td>
+            <td><%= user.lname %></td>
+            <td><%= user.membershipStatus %></td>
+            <td><%= user.admin %></td>
+            <td><%= user.datetime %></td>
+          </tr>
+        <% }) %>
+        <% } else { %>
+          <tr>There are no users!</tr>
+      </tbody>
+    <% } %>
+  </table>
+</main>
+
+<%- include("../partials/bottom") %>

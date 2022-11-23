@@ -1,0 +1,33 @@
+<%- include("../partials/top") %> 
+
+<main class="club-page">
+  <div class="page-header">
+    <div class="btn-container">
+      <a href="/" class="btn">
+        <span class="material-symbols-outlined">home</span>
+      </a>
+    </div>
+    <h1 class="page-title">
+      <%= title %>
+    </h1>
+  </div>
+
+  <% if (errors.length) { %>
+    <ul class="error">
+      <% errors.forEach(err=> { %>
+        <li>
+          <%= err.msg %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form method="POST">
+    <div class="input-container">
+      <label for="secret">secret</label>
+      <input type="text" name="secret" id="secret" placeholder="enter 'club' to join">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+<%- include("../partials/bottom") %> 

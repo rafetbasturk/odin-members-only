@@ -1,0 +1,43 @@
+<footer class="footer">
+  <span>Coded by</span>
+  <a href="https://github.com/rafetbasturk" rel="noreferrer noopener" target="_blank">Rafet</a>
+  <span>-</span>
+  <a href="https://www.theodinproject.com/" rel="noreferrer noopener" target="_blank">The Odin Project</a>
+</footer>
+</body>
+
+<script>
+  const errorsContainer = document.querySelector("ul.error")
+  if (errorsContainer) {
+    setTimeout(() => {
+      errorsContainer.style.animation = "close-modal .3s forwards ease-out"
+    }, 3000);
+  }
+
+  const eyes = document.querySelectorAll(".eye")
+  eyes.forEach(eye => {
+    eye.addEventListener("click", () => {
+      let el = eye.previousElementSibling
+      el.type == "text" ? el.type = "password" : el.type = "text";
+    })
+  })
+
+  const openBtn = document.querySelector(".open")
+  const closeBtn = document.querySelector(".close")
+  const nav = document.querySelector(".nav")
+
+  openBtn.addEventListener("click", () => {
+    openBtn.style.display = "none";
+    closeBtn.style.display = "block";
+    nav.style.left = "var(--size-m)";
+  })
+
+  closeBtn.addEventListener("click", () => {
+    closeBtn.style.display = "none";
+    openBtn.style.display = "block";
+    nav.style.left = "-150%"
+  })
+
+</script>
+
+</html>

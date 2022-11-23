@@ -1,0 +1,37 @@
+<%- include("../partials/top") %> 
+
+<main class="form-page">
+  <div class="page-header">
+    <div class="btn-container">
+      <a href="/" class="btn">
+        <span class="material-symbols-outlined">home</span>
+      </a>
+    </div>
+    <h1 class="page-title">
+      <%= title %>
+    </h1>
+  </div>
+  <% if (errors.length) { %>
+    <ul class="error">
+      <% errors.forEach(err=> { %>
+        <li>
+          <%= err.msg %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form method="POST">
+    <div class="input-container">
+      <label for="username">Username</label>
+      <input type="email" name="username" id="username" value="<%= username %>">
+    </div>
+    <div class="input-container">
+      <label for="password">password</label>
+      <input type="password" name="password" id="password" required>
+      <span class="material-symbols-outlined eye">visibility</span>
+    </div>
+    <button type="submit">Sign in</button>
+  </form>
+</main>
+<%- include("../partials/bottom") %> 

@@ -1,0 +1,43 @@
+<%- include("../partials/top") %>
+
+<main class="posts-page">
+  <div class="page-header">
+    <h1 class="page-title"><%= title %></h1>
+    <% if (user) { %>
+      <a href="/posts/create" class="btn">
+        <span class="material-symbols-outlined">add</span>
+      </a>
+    <% } %>
+  </div>
+
+  <div class="posts-container">
+    <% if (posts.length) { %>
+      <% posts.forEach(post => { %>
+        <section class="single-post">
+          <h4 class="title"><%- post.title %></h4>
+          <p class="post"><%- post.post %></p>
+          <% if (user?.membershipStatus === "club" || user?.admin) { %>
+            <div class="info">
+              <p><%= post.author?.fname %> <%= post.author?.lname %></p>
+              <time><%= post.datetime %></time>
+            </div>
+          <% } else { %>
+            <div class="info alert">
+              <p>You need to join the club or be an admin to see author and date info.</p>
+            </div>
+          <% } %>
+
+          <% if (user.admin) { %>
+            <div class="controls">
+              <a href="posts/<%= post.itemId %>/delete"><span class="material-symbols-outlined">delete</span></a>
+            </div>
+          <% } %>
+        </section>
+      <% }) %>
+    <% } else { %>
+      <p>There are no posts!</p>
+    <% } %>
+  </div>
+</main>
+
+<%- include("../partials/bottom") %>

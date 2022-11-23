@@ -1,0 +1,84 @@
+@media screen and (min-width: 756px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .header {
+    padding: 0 var(--size-xxl);
+  }
+
+  .menu {
+    flex: 1 0 200px;
+  }
+
+  .icon-container {
+    display: none !important;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    transition: none;
+    gap: var(--size-m);
+  }
+
+  .nav hr {
+    display: none;
+  }
+
+  .nav .link:hover {
+    background: transparent;
+    padding-left: 0;
+  }
+
+  .nav .link::after {
+    display: block;
+    content: '';
+    width: 100%;
+    border-bottom: 2px solid var(--clr-font);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .nav .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  .general {
+    flex-direction: row;
+    gap: var(--size-m);
+    flex: 1 0 auto;
+    justify-content: flex-end;
+  }
+
+  .profile-container {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: var(--size-m);
+  }
+
+  .posts-page,
+  .form-page,
+  .error-page,
+  .club-page {
+    padding: var(--size-m) var(--size-xxl);
+  }
+
+  .posts-page .posts-container {
+    gap: var(--size-l);
+  }
+
+  .page-header .page-title {
+    font-size: var(--size-s);
+  }
+
+  table tbody,
+  table th {
+    font-size: var(--size-s);
+  }
+}

@@ -1,0 +1,10 @@
+<%- include("./partials/top") %> 
+
+<main class="error-page">
+  <h1><%= message %></h1>
+  <h2><%= error.status %></h2>
+  <pre><%= error.stack %></pre>
+  <a href="/" class="btn">Home</a>
+</main>
+
+<%- include("./partials/bottom") %> 

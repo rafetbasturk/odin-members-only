@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-xs);
+  width: 100%;
+  height: 6rem;
+  position: fixed;
+  bottom: 0;
+  background: var(--clr-btn);
+  font-size: 1.5rem;
+  text-align: center;
+  border-top: 2px solid var(--clr-logo);
+}
+
+.footer a {
+  font-size: 1.5rem;
+  color: var(--clr-logo);
+}

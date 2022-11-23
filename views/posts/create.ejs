@@ -1,0 +1,38 @@
+<%- include("../partials/top") %>
+
+<main class="posts-page create">
+  <div class="page-header">
+    <div class="btn-container">
+      <a href="/posts" class="btn">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+    </div>
+    <h1 class="page-title">
+      <%= title %>
+    </h1>
+  </div>
+
+  <% if (errors.length) { %>
+    <ul class="error">
+      <% errors.forEach(err=> { %>
+        <li>
+          <%= err.msg %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form method="POST">
+    <div class="input-container">
+      <label for="title">title</label>
+      <input type="text" name="title" id="title" value="<%= post.title %>">
+    </div>
+    <div class="input-container">
+      <label for="post">post</label>
+      <textarea name="post" id="post"><%= post.post %></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+
+<%- include("../partials/bottom") %>

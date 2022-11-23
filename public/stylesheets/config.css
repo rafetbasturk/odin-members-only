@@ -1,0 +1,80 @@
+:root {
+  font-size: 10px;
+  --clr-font: #22223b;
+  --clr-title: #9a8c98;
+  --clr-border: #c9ada7;
+  --clr-logo: #4a4e69;
+  --clr-btn: #f2e9e4;
+  --clr-btn-hover: #c9ada7;
+  --clr-alert: #c8310f;
+  --size-xxs: .6rem;
+  --size-xs: 1rem;
+  --size-s: 1.3rem;
+  --size-m: 1.6rem;
+  --size-ml: 2rem;
+  --size-l: 2.4rem;
+  --size-xl: 3.2rem;
+  --size-xxl: 4rem;
+}
+
+h1, h2, h3, h4 {
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: var(--size-xl);
+}
+
+h2 {
+  font-size: var(--size-l);
+}
+
+h3 {
+  font-size: var(--size-ml);
+  text-align: center;
+}
+
+h4 {
+  font-size: var(--size-m);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-title);
+  font-size: var(--size-s);
+  text-transform: capitalize;
+  padding: var(--size-s) 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+.material-symbols-outlined {
+  font-size: var(--size-m);
+}
+
+.btn, button {
+  padding: var(--size-xxs);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--size-xxs);
+  background: var(--clr-btn);
+  color: var(--clr-font);
+  font-size: var(--size-s);
+  transition: all .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover, button:hover {
+  background: var(--clr-btn-hover);
+  color: var(--clr-title);
+}
